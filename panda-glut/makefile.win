@@ -4,10 +4,10 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-RES      = Project1_private.res
+RES      = panda-glut_private.res
 OBJ      = main.o glmatrix.o $(RES)
 LINKOBJ  = main.o glmatrix.o $(RES)
-CLEANOBJ  =  main.o glmatrix.o Project1_private.res panda-glut.exe
+CLEANOBJ  =  main.o glmatrix.o panda-glut_private.res panda-glut.exe
 LIBS     =  -s -mwindows -lm -lfreeglut.dll -lopengl32 -lwinmm -lgdi32 -static
 INCS     =  
 CXXINCS  =  
@@ -32,6 +32,6 @@ main.o: main.c glmatrix.h
 glmatrix.o: glmatrix.c glmatrix.h
 	$(CC) -c C:/kmazanek.gmail.com/Code.C++/cpp-templates/panda-glut/glmatrix.c -o glmatrix.o $(CFLAGS) 
 
-Project1_private.res: Project1_private.rc 
-	$(WINDRES) -i Project1_private.rc --input-format=rc -o Project1_private.res -O coff 
+panda-glut_private.res: panda-glut_private.rc 
+	$(WINDRES) -i panda-glut_private.rc --input-format=rc -o panda-glut_private.res -O coff 
 
