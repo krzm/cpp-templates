@@ -12,8 +12,8 @@ LIBS     =  -s -mwindows -lm -lfreeglut.dll -lopengl32 -lwinmm -lgdi32 -static
 INCS     =  
 CXXINCS  =  
 BIN      = panda-glut.exe
-CXXFLAGS = $(CXXINCS)  -O2 -pipe
-CFLAGS   = $(INCS)  -O2 -pipe
+CXXFLAGS = $(CXXINCS)  -g3 -O -pipe -Wall -Wextra -D__DEBUG__
+CFLAGS   = $(INCS)  -g3 -O -pipe -Wall -Wextra -D__DEBUG__
 RM       = del /q /f
 
 .PHONY: all all-before all-after clean clean-custom
@@ -27,10 +27,10 @@ $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
 main.o: main.c glmatrix.h
-	$(CC) -c C:/kmazanek.gmail.com/Code.C++/cpp-templates/panda-glut/main.c -o main.o $(CFLAGS) 
+	$(CC) -c C:/kmazanek.gmail.com/Code/cpp-templates/panda-glut/main.c -o main.o $(CFLAGS) 
 
 glmatrix.o: glmatrix.c glmatrix.h
-	$(CC) -c C:/kmazanek.gmail.com/Code.C++/cpp-templates/panda-glut/glmatrix.c -o glmatrix.o $(CFLAGS) 
+	$(CC) -c C:/kmazanek.gmail.com/Code/cpp-templates/panda-glut/glmatrix.c -o glmatrix.o $(CFLAGS) 
 
 panda-glut_private.res: panda-glut_private.rc 
 	$(WINDRES) -i panda-glut_private.rc --input-format=rc -o panda-glut_private.res -O coff 
